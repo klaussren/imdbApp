@@ -15,6 +15,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import org.apache.http.util.EntityUtils;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 
 /**
  * Created by KLAUSSREN on 23/04/2016.
@@ -23,14 +26,11 @@ public class AsyncTaskTestGET extends AsyncTask<String, Void, JSONObject> {
 
     JSONObject json = new JSONObject();
     HttpI httpI;
-
     private String url;
-    int consulta;
 
-    public AsyncTaskTestGET(HttpI httpI, String url,int consulta) {
+    public AsyncTaskTestGET(HttpI httpI, String url) {
         this.httpI = httpI;
         this.url=url;
-        this.consulta=consulta;
     }
 
     public interface HttpI {
@@ -48,13 +48,23 @@ public class AsyncTaskTestGET extends AsyncTask<String, Void, JSONObject> {
 
         HttpClient httpclient = new DefaultHttpClient();
 
-
-
-
-        HttpGet httpget = new HttpGet(url);
+        HttpGet httpget = new HttpGet("http://api.themoviedb.org/3/search/tv?api_key=11cdf899e4e3f06b0af58b5c936448fb&query=g");
         //set header to tell REST endpoint the request and response content types
         //httpget.setHeader("Accept", "application/json");
         httpget.setHeader("Content-type", "application/json");
+    //    httpget.setHeader("Authorization", "ApiKey 11cdf899e4e3f06b0af58b5c936448fb");
+   //     httpget.setHeader("Authorization", "11cdf899e4e3f06b0af58b5c936448fb");
+
+
+    /*    URL url = new URL("http://api.themoviedb.org/3/search/tv?api_key=11cdf899e4e3f06b0af58b5c936448fb&query=g");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+
+// read the response
+        System.out.println("Response Code: " + conn.getResponseCode());
+        InputStream in = new BufferedInputStream(conn.getInputStream());
+        String response = org.apache.commons.io.IOUtils.toString(in, "UTF-8");
+        System.out.println(response);*/
 
         try {
 

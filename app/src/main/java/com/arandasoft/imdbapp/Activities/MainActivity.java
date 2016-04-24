@@ -5,6 +5,7 @@ package com.arandasoft.imdbapp.Activities;
 
 import android.annotation.TargetApi;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -81,29 +84,29 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskTestGET.
                     circuloProgres.show();
                     circuloProgres.setContentView(R.layout.custom_progressdialog);
 
+                   query=query.toLowerCase();
+                   query=query.replace(" ","+");
+
+
                     url = MainActivity.this.getResources().getString(R.string.url_buscar_serie);
                     apiKey = MainActivity.this.getResources().getString(R.string.apiKey);
 
-                    url=url+apiKey+"&"+"query="+query;
+                    url = url + apiKey + "&" + "query=" + query;
 
-                    asynTaskGet = new AsyncTaskTestGET(MainActivity.this, url, 1);
+                    asynTaskGet = new AsyncTaskTestGET(MainActivity.this, url);
                     asynTaskGet.execute();
 
 
 
-            }
+                }
             }
         });
 
-        rowListItem = getAllItemList();
-
 
         lLayout = new GridLayoutManager(MainActivity.this, 2);
-
         rView = (RecyclerView) findViewById(R.id.recycler_view);
         rView.setHasFixedSize(true);
         rView.setLayoutManager(lLayout);
-
 
         rView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -139,8 +142,7 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskTestGET.
             }
         });
 
-        rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
-        rView.setAdapter(rcAdapter);
+
 
 
 
@@ -172,6 +174,11 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskTestGET.
     private ArrayList<ItemSeriesObject> getAllItemList() {
 
 
+
+
+
+
+
         ArrayList<ItemSeriesObject> allItems = new ArrayList<ItemSeriesObject>();
 
         for (int i = ival; i <= loadLimit; i++) {
@@ -185,9 +192,20 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskTestGET.
     @Override
     public void setResult(JSONObject json) throws JSONException {
 
+        Window window = this.getWindow();
+
+        InputMethodManager inputMethodManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        inputMethodManager.hideSoftInputFromWindow(window.getDecorView().getWindowToken(), 0);
+
+
         circuloProgres.cancel();
 
         if (json != null) {
+            rowListItem = getAllItemList();
+
+            rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
+            rView.setAdapter(rcAdapter);
 
         }
 
