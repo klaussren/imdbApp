@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+
+    >
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:indeterminate="false"
+        android:background="@null"
+        android:indeterminateDrawable="@drawable/progressbar_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@null"
+        android:backgroundTintMode="src_over"
+        android:progressBackgroundTint="@null"
+        android:progressBackgroundTintMode="src_over"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/cargando"
+        android:textColor="#011a87"/>
+</LinearLayout>

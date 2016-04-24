@@ -7,6 +7,10 @@
 
     <string name="url_imagen">http://image.tmdb.org/t/p/w342/</string>
 
+    <string name="cargando">Cargando...</string>
 
+    <string name="edit_text_hint">Serie a buscar </string>
+    <string name="apiKey">11cdf899e4e3f06b0af58b5c936448fb</string>
+    <string name="url_buscar_serie">http://api.themoviedb.org/3/search/tv?api_key=</string>
 
 </resources>

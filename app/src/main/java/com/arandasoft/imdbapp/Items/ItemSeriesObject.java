@@ -1,12 +1,12 @@
 package com.arandasoft.imdbapp.Items;
 
 
-public class ItemObject {
+public class ItemSeriesObject {
 
     private String name;
     private String photo;
 
-    public ItemObject(String name, String photo) {
+    public ItemSeriesObject(String name, String photo) {
         this.name = name;
         this.photo = photo;
     }

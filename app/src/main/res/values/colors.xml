@@ -9,6 +9,7 @@
 
     <color name="Negro">#000000</color>
     <color name="Blanco">#FFFFFF</color>
+    <color name="Gris">#c2bfbf</color>
 
 
 </resources>
