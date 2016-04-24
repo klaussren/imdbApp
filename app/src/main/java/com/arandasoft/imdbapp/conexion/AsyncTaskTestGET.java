@@ -48,23 +48,17 @@ public class AsyncTaskTestGET extends AsyncTask<String, Void, JSONObject> {
 
         HttpClient httpclient = new DefaultHttpClient();
 
-        HttpGet httpget = new HttpGet("http://api.themoviedb.org/3/search/tv?api_key=11cdf899e4e3f06b0af58b5c936448fb&query=g");
+        HttpGet httpget = new HttpGet(url);
         //set header to tell REST endpoint the request and response content types
-        //httpget.setHeader("Accept", "application/json");
+
         httpget.setHeader("Content-type", "application/json");
-    //    httpget.setHeader("Authorization", "ApiKey 11cdf899e4e3f06b0af58b5c936448fb");
-   //     httpget.setHeader("Authorization", "11cdf899e4e3f06b0af58b5c936448fb");
+
+        httpget.setHeader("Accept", "application/json");
+        httpget.setHeader("ETag", "d3a69fdeee228ff6582e6d1d7c7073ee");
 
 
-    /*    URL url = new URL("http://api.themoviedb.org/3/search/tv?api_key=11cdf899e4e3f06b0af58b5c936448fb&query=g");
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("POST");
 
-// read the response
-        System.out.println("Response Code: " + conn.getResponseCode());
-        InputStream in = new BufferedInputStream(conn.getInputStream());
-        String response = org.apache.commons.io.IOUtils.toString(in, "UTF-8");
-        System.out.println(response);*/
+
 
         try {
 

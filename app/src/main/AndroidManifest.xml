@@ -15,15 +15,17 @@
     <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
     <uses-permission android:name="android.permission.BIND_CARRIER_SERVICES" />
     <uses-permission android:name="android.permission.BIND_CHOOSER_TARGET_SERVICE" />
-
+    <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.WRITE_GSERVICES"/>
     <uses-permission android:name="android.permission.BIND_NFC_SERVICE" />
+
+
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="com.google.android.providers.gsf.permisson.READ_GSERVICES"/>
-    <uses-permission android:name="com.google.android.providers.gsf.permission.WRITE_GSERVICES"/>
+
 
     <!-- Permiso Notificaciones -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -31,6 +33,12 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="com.arandasoft.imdbapp.Activities.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.arandasoft.imdbapp.Activities.permission.C2D_MESSAGE" />
 
 
     <application

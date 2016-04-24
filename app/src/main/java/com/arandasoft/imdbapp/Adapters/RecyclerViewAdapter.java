@@ -18,17 +18,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
 
     private ArrayList<ItemSeriesObject> itemList;
     private Context context;
+    RecyclerViewHolders recHolder;
 
     public RecyclerViewAdapter(Context context, ArrayList<ItemSeriesObject> itemList) {
         this.itemList = itemList;
         this.context = context;
+
     }
 
     @Override
     public RecyclerViewHolders onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_list, null);
-        RecyclerViewHolders rcv = new RecyclerViewHolders(layoutView);
+        RecyclerViewHolders rcv = new RecyclerViewHolders(layoutView,itemList);
+
+
         return rcv;
     }
 
@@ -39,6 +43,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
 
         String enlace=context.getResources().getString(R.string.url_imagen);
         String image_url = enlace + itemList.get(position).getPhoto();
+
+
+
+
 
 
         /*Esta Libreria Llamada Piccasso Picasso permite cargar imagenes sin problemas
