@@ -1,16 +1,20 @@
 <resources>
-    <string name="app_name">imdbApp</string>
+    <string name="app_name">ImdbApp</string>
 
     <string name="imagen_serie">imagen serie</string>
     <string name="nombre_serie">nombre serie</string>
 
 
     <string name="url_imagen">http://image.tmdb.org/t/p/w342/</string>
+    <string name="url_imagen_no_disponible">http://www.sekuritek.com/images/imagesCatalog/imagesProduct/20151210img_noDisponible.jpg</string>
 
     <string name="cargando">Cargando...</string>
 
     <string name="edit_text_hint">Serie a buscar </string>
     <string name="apiKey">11cdf899e4e3f06b0af58b5c936448fb</string>
     <string name="url_buscar_serie">http://api.themoviedb.org/3/search/tv?api_key=</string>
+
+    <string name="descripcion_serie">http://api.themoviedb.org/3/tv/</string>
+
 
 </resources>
