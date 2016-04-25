@@ -14,9 +14,17 @@ Este proyecto necesita las siguientes dependencias en el archivo build.gradle:
     compile 'com.squareup.picasso:picasso:2.5.2'
 
 Instrucciones para compilar la Aplicación
--Debe descargar el proyecto de la pagina 
--Descomprimir el proyecto y luego abrirlo con el iD Androd Studio, verificar si su ide tiene el appcompat-v7:23.3.0
--Luego ejecute la aplicacion undiendo el boton play de el ide Android Studio
+
+Debe descargar el proyecto de la pagina deonde dice Download:
+
+- [Link][8]
+
+
+Descomprimir el proyecto y luego abrirlo con el iD Androd Studio, verificar si su ide tiene el appcompat-v7:23.3.0
+
+Luego ejecute la aplicacion undiendo el boton play de el ide Android Studio
 
 
 Autor: Klauss Sheffield Rendon Muñoz
+
+[8]: https://github.com/klaussren/imdbApp
